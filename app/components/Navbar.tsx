@@ -51,13 +51,13 @@ const Navbar = () => {
 
 
             {/* Other pages using router.push */}
-            <TouchableOpacity onPress={() => handleNavigation("/about")}>
+            <TouchableOpacity onPress={() => handleNavigation("/AboutScreen")}>
               <Text style={styles.menuItem}>About</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => handleNavigation("/service")}>
+            <TouchableOpacity onPress={() => handleNavigation("/ServiceScreen")}>
               <Text style={styles.menuItem}>Services</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => handleNavigation("/contact")}>
+            <TouchableOpacity onPress={() => handleNavigation("/ContactScreen")}>
               <Text style={styles.menuItem}>Contact</Text>
             </TouchableOpacity>
           </View>

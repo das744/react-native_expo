@@ -9,7 +9,7 @@ const FooterDesign = () => {
   const isMobile = width < 768; // If screen width < 768px, treat it as mobile
 
   return (
-    <View style={styles.container}>
+    <View style={styles.footerContainer}>
       <View style={isMobile ? styles.columnContainer : styles.rowContainer}>
         {/* Company Info */}
         <View style={styles.section}>
@@ -24,19 +24,19 @@ const FooterDesign = () => {
           <Text style={styles.sectionTitle}>Quick Links</Text>
     
             {/* Internal Links */}
-        <Link href="/about" asChild>
+        <Link href="/AboutScreen" asChild>
           <TouchableOpacity>
             <Text style={styles.footerLink}>About Us</Text>
           </TouchableOpacity>
         </Link>
 
-        <Link href="/service" asChild>
+        <Link href="/ServiceScreen" asChild>
           <TouchableOpacity>
             <Text style={styles.footerLink}>Services</Text>
           </TouchableOpacity>
         </Link>
 
-        <Link href="/contact" asChild>
+        <Link href="/ContactScreen" asChild>
           <TouchableOpacity>
             <Text style={styles.footerLink}>Contact</Text>
           </TouchableOpacity>
@@ -77,14 +77,16 @@ const FooterDesign = () => {
 };
 
 const styles = StyleSheet.create({
-  container: {
+  footerContainer: {
     backgroundColor: "#333",
     padding: 20,
-    paddingBottom: 0,
+    paddingBottom: 20,
+
+   
   },
   rowContainer: {
     flexDirection: "row",
-    // flexWrap: "wrap",
+    flexWrap: "wrap",
     justifyContent: "space-between",
   },
   columnContainer: {

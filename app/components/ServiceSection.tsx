@@ -1,5 +1,8 @@
 import React from "react";
-import { View, Text, StyleSheet, ScrollView } from "react-native";
+import { View, Text, StyleSheet, ScrollView, Dimensions } from "react-native";
+
+// Get screen width
+const { width } = Dimensions.get("window");
 
 // Service data
 const services = [
@@ -72,6 +75,7 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 20,
     backgroundColor: "#f4f4f4",
+    minHeight: "25%",
   },
   heading: {
     fontSize: 32,
@@ -84,10 +88,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "space-between",
-    
   },
   card: {
-    width: "48%", // Each card takes up almost half the width
+    width: width > 768 ? "48%" : "100%", // 48% width for larger screens, 100% for smaller ones
     backgroundColor: "#fff",
     borderRadius: 10,
     padding: 15,
@@ -97,7 +100,6 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 4,
     elevation: 3,
-   
   },
   cardTitle: {
     fontSize: 24,
@@ -112,16 +114,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginBottom: 5,
     color: "#555",
-  },
-
-  // Make grid responsive
-  "@media (max-width: 768px)": {
-    gridContainer: {
-      flexDirection: "column", // Stack cards vertically on mobile
-    },
-    card: {
-      width: "100%", // Cards take up full width on smaller screens
-    },
   },
 });
 
